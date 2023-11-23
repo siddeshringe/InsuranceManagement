@@ -7,8 +7,8 @@ node{
         mavenHome = tool name: 'maven' , type: 'maven'
         mavenCMD = "${mavenHome}/bin/mvn"
         tag="3.0"
-	dockerHubUser="anujsharma1990"
-	containerName="insure-me"
+	dockerHubUser="siddeshringe"
+	containerName="insurance"
 	httpPort="8081"
     }
     
@@ -40,7 +40,7 @@ node{
 	
     stage('Docker Image Scan'){
         echo 'Scanning Docker image for vulnerbilities'
-        sh "docker build -t ${dockerHubUser}/insure-me:${tag} ."
+        sh "docker build -t ${dockerHubUser}/insurance:${tag} ."
     }   
 	
     stage('Publishing Image to DockerHub'){
